@@ -6,6 +6,6 @@ class EmailParser
   end
 
   def parse
-    @emails.scan(/\S+/).map { |email| email[-1] == "," ? email[0...-1] : email}.uniq
+    @emails.split.map { |email| email[-1] == "," ? email[0...-1] : email}.uniq
   end
 end
